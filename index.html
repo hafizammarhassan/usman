@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Bio - Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        
+        body { 
+            background-color: #1a1a1a; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        
+        .container { 
+            width: 100%;
+            max-width: 380px; 
+            background-color: #000; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            position: relative; 
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        @keyframes slideDownBg {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: translateX(-50%) scale(0.5); }
+            to { opacity: 1; transform: translateX(-50%) scale(1); }
+        }
+
+        .top-part { 
+            background-image: url('top-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-color: #cbbba9; 
+            height: 320px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding-top: 30px; 
+            position: relative; 
+            animation: slideDownBg 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .top-part::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.1); 
+        }
+        
+        .cyber-text { 
+            font-size: 10px; 
+            letter-spacing: 3px; 
+            text-transform: uppercase; 
+            color: #fff; 
+            margin-bottom: 45px; 
+            position: relative;
+            z-index: 3;
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+            opacity: 0;
+        }
+        
+        .name-heading { 
+            font-family: 'Bodoni Moda', serif; 
+            font-size: 55px; 
+            color: #fff; 
+            line-height: 0.8; 
+            text-transform: uppercase; 
+            text-align: center; 
+            position: relative; 
+            z-index: 6; 
+            margin-top: 10px; 
+            animation: fadeInUp 1s ease forwards 0.8s;
+            opacity: 0;
+        }
+        
+        .profile-wrapper { 
+            position: absolute; 
+            bottom: -75px; 
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10; 
+            animation: scaleIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1.2s;
+            opacity: 0;
+        }
+        
+        .profile-img { 
+            width: 190px; 
+            height: 190px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            display: block;
+            image-rendering: -webkit-optimize-contrast;
+        }
+        
+        .bottom-part { 
+            background-color: #000; 
+            padding: 100px 30px 20px 30px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            animation: fadeInUp 1s ease forwards 1.5s;
+            opacity: 0;
+        }
+
+        .social-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px solid #1a1a1a;
+            text-decoration: none;
+            color: #fff;
+            transition: 0.3s ease;
+        }
+
+        .social-item:hover {
+            background: rgba(255,255,255,0.05);
+            padding-left: 10px;
+        }
+
+        .social-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-info i {
+            font-size: 18px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .social-name {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .arrow {
+            font-size: 12px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-part">
+            <div class="cyber-text">❤️‍🩹𝐑𝐀𝐍𝐉𝐇𝐀❤️‍🩹</div>
+            <h1 class="name-heading">USMAN<br>RAJPUT</h1>
+            
+            <div class="profile-wrapper">
+                <img src="my.png" class="profile-img" alt="USMAN RAJPUT">
+            </div>
+        </div>
+        
+        <div class="bottom-part">
+            <div class="social-list">
+                <a href="https://www.snapchat.com/add/@usmanrajput628" target="_blank" class="social-item">
+                    <div class="social-info">
+                        <i class="fab fa-snapchat"></i>
+                        <span class="social-name">Snapchat</span>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+
+                <a href="https://www.instagram.com/@usmanrajput_40" target="_blank" class="social-item">
+                    <div class="social-info">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-name">Instagram</span>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@usmanrajput__0" target="_blank" class="social-item">
+                    <div class="social-info">
+                        <i class="fab fa-tiktok"></i>
+                        <span class="social-name">Tiktok</span>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+
+                <a href="https://www.facebook.com/share/1B8hv67fgh/" target="_blank" class="social-item">
+                    <div class="social-info">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="social-name">Facebook</span>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+
+                <a href="#" class="social-item">
+                    <div class="social-info">
+                        <i class="fab fa-twitter"></i>
+                        <span class="social-name">Twitter</span>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
